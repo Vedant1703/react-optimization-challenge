@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Bulky from './Bulky';
+import Essay1 from './Essay1';
 
 function RandomInfo() {
     const [fact, setFact] = useState("");
@@ -27,6 +28,7 @@ function RandomInfo() {
 
     </div>
     <Bulky/>
+    <Essay1/>
     </>
     
   )
