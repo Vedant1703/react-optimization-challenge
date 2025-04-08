@@ -6,8 +6,10 @@ function App() {
   
   return (
     <>
-     
-    <Time/>
+     <div className='p-6 bg-gray-800'>
+     <Time/>
+     </div>
+    
     
     
     </>
