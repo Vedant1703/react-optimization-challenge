@@ -1,3 +1,10 @@
+# Set up
+- Fork the repo
+- Clone it
+- Run npm install
+- Run npm run dev
+  
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
