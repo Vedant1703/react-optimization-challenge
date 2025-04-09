@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef} from 'react'
-import Bulky from './Bulky';
 import Game from './Game';
+
 function RandomInfo() {
     const [fact, setFact] = useState("");
     
@@ -82,13 +82,8 @@ function RandomInfo() {
         </div>
       </div>
 </div>
-   
       <Game/>
-
-    
-    
     </>
-    
   )
 }
 

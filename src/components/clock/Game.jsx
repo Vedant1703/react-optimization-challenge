@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Essay1 from "./Essay1";
 
+
 const choices = [
   { name: "Rock", emoji: "🪨" },
   { name: "Paper", emoji: "📄" },
@@ -50,40 +51,52 @@ export default function Game() {
   };
 
   return (
-    <div className='flex justify-between items-start text-white my-6'>
-    <div className="flex flex-col w-[48%] justify-center border-white border-2 rounded-lg items-center bg-gradient-to-br from-purple-600  to-blue-600 p-6">
-      <h1 className="text-3xl text-yellow-200 font-extrabold mb-4">Stone Paper Scissors</h1>
+    <div className="flex flex-row justify-between items-start text-white my-6 gap-4">
+ 
+    <div className="flex flex-col w-[48%] gap-4">
+    
+      <div className="flex flex-col w-full justify-center border-white border-2 rounded-lg items-center bg-gradient-to-br from-purple-600 to-blue-600 p-6">
+        <h1 className="text-3xl text-yellow-200 font-extrabold mb-4">
+          Stone Paper Scissors
+        </h1>
 
-      <div className="flex gap-6 my-4">
-        {choices.map((choice) => (
-          <button
-            key={choice.name}
-            onClick={() => handleClick(choice)}
-            className="bg-white text-3xl p-6 rounded-full shadow-lg hover:scale-110 transition"
-          >
-            {choice.emoji}
-          </button>
-        ))}
+        <div className="flex gap-6 my-4">
+          {choices.map((choice) => (
+            <button
+              key={choice.name}
+              onClick={() => handleClick(choice)}
+              className="bg-white text-3xl p-6 rounded-full shadow-lg hover:scale-110 transition"
+            >
+              {choice.emoji}
+            </button>
+          ))}
+        </div>
+
+        <div className="text-xl my-4">
+          {userChoice && computerChoice && (
+            <>
+              <p>
+                You chose{" "}
+                <span className="font-bold">{userChoice.emoji}</span> vs
+                Computer chose{" "}
+                <span className="font-bold">{computerChoice.emoji}</span>
+              </p>
+              <p className="mt-2 font-semibold">{result}</p>
+            </>
+          )}
+        </div>
+
+        <div className="mt-6 p-4 bg-white rounded-lg shadow-lg flex gap-12 text-lg font-semibold">
+          <span className="text-green-600">You: {score.user}</span>
+          <span className="text-red-600">Computer: {score.computer}</span>
+        </div>
+      </div>
       </div>
 
-      <div className="text-xl my-4">
-        {userChoice && computerChoice && (
-          <>
-            <p>
-              You chose <span className="font-bold">{userChoice.emoji}</span> vs Computer chose{" "}
-              <span className="font-bold">{computerChoice.emoji}</span>
-            </p>
-            <p className="mt-2 font-semibold ">{result}</p>
-          </>
-        )}
-      </div>
-
-      <div className="mt-6 p-4 bg-white rounded-lg shadow-lg flex gap-12 text-lg font-semibold">
-        <span className="text-green-600">You: {score.user}</span>
-        <span className="text-red-600">Computer: {score.computer}</span>
-      </div>
-    </div>
-    <Essay1 prop={prop} />
-    </div>
+ 
+<div className="w-[48%]">
+  <Essay1 />
+</div>
+</div>
   );
 }
