@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     const handleMouseMove = () => {
-      setMouseMoveTrigger((prev) => prev + 1); // forces rerender
+      setMouseMoveTrigger((prev) => prev + 1); 
     };
 
     window.addEventListener('mousemove', handleMouseMove);
