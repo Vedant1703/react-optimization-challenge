@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef} from 'react'
 import Game from './Game';
 
 function RandomInfo() {
-    const [fact, setFact] = useState("");
+    // const [fact, setFact] = useState("");
     
     const [seconds, setSeconds] = useState(0);
     const [running, setRunning] = useState(false);
@@ -30,34 +30,37 @@ function RandomInfo() {
       setRunning(false);
       setSeconds(0);
     };
-  useEffect(() => {
-    const fetchFact = () => {
-      fetch('https://catfact.ninja/fact')
-        .then(response => response.json())
-        .then((res) => {
-          setFact(res.fact);
-        })
-        .catch(error => console.error('Error fetching cat fact:', error));
-    };
+  // useEffect(() => {
+  //   const fetchFact = () => {
+  //     fetch('https://catfact.ninja/fact')
+  //       .then(response => response.json())
+  //       .then((res) => {
+  //         setFact(res.fact);
+  //       })
+  //       .catch(error => console.error('Error fetching cat fact:', error));
+  //   };
 
-    fetchFact(); 
-    const interval = setInterval(fetchFact, 10000); 
+  //   fetchFact(); 
+  //   // const interval = setInterval(fetchFact, 10000); 
 
-    return () => clearInterval(interval); 
-  }, []);
+  //   // return () => clearInterval(interval); 
+  // }, []);
+
+  // console.log("Random Info");
     
   return (
     <>
-    <div className="flex justify-between items-center text-white my-6">
-  <div className="w-[48%] min-h-[220px] bg-gradient-to-br from-purple-600 to-indigo-600 border-2 border-white rounded-2xl p-6 text-center shadow-lg transition-all duration-300 hover:scale-[1.01]">
+    {/* <div className="min-w-[50%] m-auto items-center text-white my-6"> */}
+    <div className="min-w-[50%] m-auto items-center text-white my-6">
+  {/* <div className="w-[48%] min-h-[220px] bg-gradient-to-br from-purple-600 to-indigo-600 border-2 border-white rounded-2xl p-6 text-center shadow-lg transition-all duration-300 hover:scale-[1.01]">
     <h2 className="text-2xl font-bold mb-4 text-yellow-200">
       🐱 Your 10-Second Random Cat Fact
     </h2>
     <p className="text-lg italic leading-relaxed text-white">
       {fact || "Loading a purr-fect fact..."}
     </p>
-  </div>
-  <div className="w-[48%] min-h-[220px] bg-gradient-to-br from-purple-600 to-indigo-600 border-2 border-white rounded-2xl p-6 text-center shadow-lg transition-all duration-300 hover:scale-[1.01]">
+  </div> */}
+  <div className=" min-h-[220px] bg-gradient-to-br from-purple-600 to-indigo-600 border-2 border-white rounded-2xl p-6 text-center shadow-lg transition-all duration-300 hover:scale-[1.01]">
         <h1 className="text-2xl font-bold mb-4">⏱️ Timer</h1>
         <div className="text-4xl font-mono tracking-widest mb-6">
           {formatTime(seconds)}
@@ -82,7 +85,6 @@ function RandomInfo() {
         </div>
       </div>
 </div>
-      <Game/>
     </>
   )
 }

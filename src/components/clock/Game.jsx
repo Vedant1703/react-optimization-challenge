@@ -21,13 +21,13 @@ const getRandomChoice = () => {
 
 export default function Game() {
     const [prop, setProp] = useState(2);
-    useEffect(() => {
-        const interval = setInterval(() => {
-          setProp(prev => prev + 1);
-        }, 5000);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //       setProp(prev => prev + 1);
+    //     }, 5000);
     
-        return () => clearInterval(interval); 
-      }, []);
+    //     return () => clearInterval(interval); 
+    //   }, []);
 
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
@@ -49,11 +49,14 @@ export default function Game() {
       setScore((s) => ({ ...s, computer: s.computer + 1 }));
     }
   };
+// <div className="mx-10 min-w-[50%] flex flex-row justify-between items-start text-white my-6 gap-4">
+  console.log("Game");
 
   return (
-    <div className="flex flex-row justify-between items-start text-white my-6 gap-4">
+    <>
+    <div className="mx-10 min-w-[50%] flex flex-row justify-between items-start text-white my-6 gap-4">
  
-    <div className="flex flex-col w-[48%] gap-4">
+    <div className="flex flex-col gap-4">
     
       <div className="flex flex-col w-full justify-center border-white border-2 rounded-lg items-center bg-gradient-to-br from-purple-600 to-blue-600 p-6">
         <h1 className="text-3xl text-yellow-200 font-extrabold mb-4">
@@ -94,9 +97,10 @@ export default function Game() {
       </div>
 
  
-<div className="w-[48%]">
+{/* <div className="w-[48%]">
   <Essay1 />
+</div> */}
 </div>
-</div>
+</>
   );
 }

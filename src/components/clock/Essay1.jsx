@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
 function Essay1 () {
-     
+     console.log("Essay");
   return (
-    <div className="p-6 bg-gray-200 rounded-xl shadow-lg w-[100%] space-y-4">
+    <div className="p-6 min-w-[50%] bg-gray-200 rounded-xl shadow-lg w-[100%] space-y-4">
     <h2 className="text-3xl font-bold text-purple-700 mb-4 text-center">💡 Developer Git Jokes</h2>
     {[
       {
